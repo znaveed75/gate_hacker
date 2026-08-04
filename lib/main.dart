@@ -121,7 +121,7 @@ class _LogicGateScreenState extends State<LogicGateScreen> {
                 });
               },
 
-              child: Text('Input A: ${inputA ? "ON (true)" : "OFF (false)"}'),
+              child: Text('Input A: ${inputA ? "HIGH (1)" : "LOW (0)"}'),
             ),
 
             const SizedBox(height: 15),
@@ -134,12 +134,12 @@ class _LogicGateScreenState extends State<LogicGateScreen> {
                   checkOutput();
                 });
               },
-              child: Text('Input B: ${inputB ? "ON (true)" : "OFF (false)"}'),
+              child: Text('Input B: ${inputB ? "HIGH (1)" : "LOW (0)"}'),
             ),
 
             const SizedBox(height: 15),
 
-            Text(output ? "LIT" : "OFF."),
+            Text(output ? "OUTPUT: HIGH (1)" : "OUTPUT: LOW (0)"),
           ],
         ),
       ),
@@ -200,7 +200,7 @@ class _LogicGateScreen2State extends State<LogicGateScreen2> {
                 });
               },
 
-              child: Text('Input A: ${inputA ? "ON (true)" : "OFF (false)"}'),
+              child: Text('Input A: ${inputA ? "HIGH (1)" : "LOW (0)"}'),
             ),
 
             const SizedBox(height: 15),
@@ -213,12 +213,12 @@ class _LogicGateScreen2State extends State<LogicGateScreen2> {
                   checkOutput();
                 });
               },
-              child: Text('Input B: ${inputB ? "ON (true)" : "OFF (false)"}'),
+              child: Text('Input B: ${inputB ? "HIGH (1)" : "LOW (0)"}'),
             ),
 
             const SizedBox(height: 15),
 
-            Text(output ? "LIT" : "OFF."),
+            Text(output ? "OUTPUT: HIGH (1)" : "OUTPUT: LOW (0)"),
           ],
         ),
       ),
@@ -276,6 +276,12 @@ class _LogicGateScreen3State extends State<LogicGateScreen3> {
 
             // BUTTON FOR INPUT A
             ElevatedButton(
+
+              style: ElevatedButton.styleFrom(
+                backgroundColor: inputA ? Colors.green : Colors.grey[800], // Green when 1, Dark Grey when 0
+                foregroundColor: Colors.white, // Text color
+              ),
+
               onPressed: () {
                 setState(() {
                   inputA = !inputA;
@@ -283,7 +289,7 @@ class _LogicGateScreen3State extends State<LogicGateScreen3> {
                 });
               },
 
-              child: Text('Input A: ${inputA ? "ON (true)" : "OFF (false)"}'),
+              child: Text('Input A: ${inputA ? "HIGH (1)" : "LOW (0)"}'),
             ),
 
             const SizedBox(height: 15),
@@ -304,13 +310,19 @@ class _LogicGateScreen3State extends State<LogicGateScreen3> {
 
             // BUTTON FOR INPUT B
             ElevatedButton(
+
+              style: ElevatedButton.styleFrom(
+                backgroundColor: inputB ? Colors.green : Colors.grey[800], // Green when 1, Dark Grey when 0
+                foregroundColor: Colors.white, // Text color
+              ),
+
               onPressed: () {
                 setState(() {
                   inputB = !inputB; // Flips true to false, or false to true
                   checkOutput();
                 });
               },
-              child: Text('Input B: ${inputB ? "ON (true)" : "OFF (false)"}'),
+              child: Text('Input B: ${inputB ? "HIGH (1)" : "LOW (0)"}'),
             ),
 
             const SizedBox(height: 15),
@@ -329,18 +341,31 @@ class _LogicGateScreen3State extends State<LogicGateScreen3> {
 
             // BUTTON FOR INPUT C
             ElevatedButton(
+              
+              style: ElevatedButton.styleFrom(
+                backgroundColor: inputC ? Colors.green : Colors.grey[800], // Green when 1, Dark Grey when 0
+                foregroundColor: Colors.white, // Text color
+              ),
+
               onPressed: () {
                 setState(() {
                   inputC = !inputC; // Flips true to false, or false to true
                   checkOutput();
                 });
               },
-              child: Text('Input C: ${inputC ? "ON (true)" : "OFF (false)"}'),
+              child: Text('Input C: ${inputC ? "HIGH (1)" : "LOW (0)"}'),
             ),
 
             const SizedBox(height: 15),
 
-            Text(output ? "LIT" : "OFF."),
+            Text(
+              output ? "OUTPUT: HIGH (1)" : "OUTPUT: LOW (0)",
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+              ),
+
+            )
           ],
         ),
       ),
