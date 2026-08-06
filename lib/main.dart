@@ -35,7 +35,23 @@ Widget build(BuildContext context) {
            'Select a Level',
            style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
          ),
+
+
          const SizedBox(height: 30),
+
+
+        ElevatedButton(
+           onPressed: () {
+             // YOUR NAVIGATOR CODE GOES HERE
+             Navigator.push(
+               context,
+               MaterialPageRoute(builder: (context) => const Tutorial1Screen()),
+             );
+           },
+           child: const Text('Tutorial 1: Basic Logic Gates'),
+         ),
+
+        const SizedBox(height: 15),
 
          // LEVEL 1 BUTTON
          ElevatedButton(
@@ -46,7 +62,7 @@ Widget build(BuildContext context) {
                MaterialPageRoute(builder: (context) => const LogicGateScreen()),
              );
            },
-           child: const Text('Level 1: AND Gate - click here to go to Level 1'),
+           child: const Text('Level 1: AND Gate'),
          ),
 
         const SizedBox(height: 15),
@@ -80,6 +96,113 @@ Widget build(BuildContext context) {
  );
 }
 }
+
+
+class Tutorial1Screen extends StatefulWidget {
+  const Tutorial1Screen({super.key});
+
+  @override
+  State<Tutorial1Screen> createState() => _Tutorial1ScreenState();
+}
+
+class _Tutorial1ScreenState extends State<Tutorial1Screen> {
+
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Tutorial 1'),
+        backgroundColor: Colors.indigo,
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+
+            const Text(
+              'This is going to be a basic tutorial for the first three levels.',
+              style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+            ),
+
+            const SizedBox(height: 30),
+
+            const Text(
+              'A logic gate takes one or more binary inputs and produces a single binary output based on a specific logical operation.',
+              style: TextStyle(fontSize: 15, fontWeight: FontWeight.normal),
+            ),
+
+            const SizedBox(height: 25),
+
+            const Text(
+              'Lets start with the first gate: the AND gate. the AND gate requires both inputs to be HIGH (1) in order for the output to be HIGH (1).',
+              style: TextStyle(fontSize: 15, fontWeight: FontWeight.normal),
+            ),
+
+            const SizedBox(height: 5),
+
+            const Text(
+              'Put it in Simple English: "input D AND input F must both be HIGH (1) for the output to be HIGH (1)."',
+              style: TextStyle(fontSize: 15, fontWeight: FontWeight.normal),
+            ),
+
+            const SizedBox(height: 5),
+
+            const Text(
+              'There might be levels where I say both must be HIGH, so that automatically implies that there is going to be an AND gate in the circuit without me having to use the word AND.',
+              style: TextStyle(fontSize: 15, fontWeight: FontWeight.normal),
+            ),
+
+
+            // const Text(
+            //   'Lets start with the first gate: the AND gate. the AND gate requires both inputs to be HIGH (1) in order for the output to be HIGH (1). Put it in Simple English: "input D AND input F must both be HIGH (1) for the output to be HIGH (1)." There might be levels where I say both must be HIGH, so that automatically implies that there is going to be an AND gate in the circuit without me having to use the word AND.',
+            //   style: TextStyle(fontSize: 15, fontWeight: FontWeight.normal),
+            // ),
+
+            const SizedBox(height: 35),
+
+            // const Text(
+            //   'Next basic gate were going to cover is the OR gate. This one requires at least one of two inputs to be HIGH (1) in order for the output to be HIGH (1) input V OR input W must be HIGH (1), or your probably used to hearing either V or W must be on which automatically implies at least one of them need to be HIGH.',
+            //   style: TextStyle(fontSize: 15, fontWeight: FontWeight.normal),
+            // ),
+
+            const Text(
+              'Next basic gate were going to cover is the OR gate. This one requires at least one of two inputs to be HIGH (1)',
+              style: TextStyle(fontSize: 15, fontWeight: FontWeight.normal),
+            ),
+
+            const SizedBox(height: 5),
+
+            const Text(
+              'in order for the output to be HIGH (1) input V OR input W must be HIGH (1),',
+              style: TextStyle(fontSize: 15, fontWeight: FontWeight.normal),
+            ),
+
+
+            const SizedBox(height: 5),
+
+            const Text(
+              'or your probably used to hearing either V or W must be on which automatically implies at least one of them need to be HIGH.',
+              style: TextStyle(fontSize: 15, fontWeight: FontWeight.normal),
+            ),
+
+
+            const SizedBox(height: 35),
+
+            const Text(
+              'Go ahead and try levels 1-3 as a warm up!',
+              style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+            ),
+
+          ],
+        ),
+      ),
+    );
+  }
+
+
+}
+
 
 
 class LogicGateScreen extends StatefulWidget {
