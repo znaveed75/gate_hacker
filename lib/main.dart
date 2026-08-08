@@ -90,6 +90,20 @@ Widget build(BuildContext context) {
            },
            child: const Text('Level 3: Three Inputs'),
          ),
+
+
+          const SizedBox(height: 15),
+
+         ElevatedButton(
+           onPressed: () {
+             // YOUR NAVIGATOR CODE GOES HERE
+             Navigator.push(
+               context,
+               MaterialPageRoute(builder: (context) => const Tutorial2Screen()),
+             );
+           },
+           child: const Text('Tutorial 2: SOP & Truth Tables'),
+         ),
        ],
      ),
    ),
@@ -199,10 +213,108 @@ class _Tutorial1ScreenState extends State<Tutorial1Screen> {
       ),
     );
   }
-
-
 }
 
+
+class Tutorial2Screen extends StatefulWidget {
+  const Tutorial2Screen({super.key});
+
+  @override
+  State<Tutorial2Screen> createState() => _Tutorial2ScreenState();
+}
+
+class _Tutorial2ScreenState extends State<Tutorial2Screen> {
+
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Tutorial 2'),
+        backgroundColor: Colors.indigo,
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+
+            const Text(
+              'Sum of Products & Truth Tables',
+              style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+            ),
+
+            const SizedBox(height: 30),
+
+            const Text(
+              'A sum of products is basically a way to represent a logic circuit using boolean algebra.',
+              style: TextStyle(fontSize: 15, fontWeight: FontWeight.normal),
+            ),
+
+            const SizedBox(height: 25),
+
+            const Text(
+              'A truth table contains all possible combinations of inputs and their corresponding outputs for a logic circuit.',
+              style: TextStyle(fontSize: 15, fontWeight: FontWeight.normal),
+            ),
+
+            const SizedBox(height: 10),
+
+
+            const Text(
+              'Example of a row would be | Input A | Input B | Output |',
+              style: TextStyle(fontSize: 15, fontWeight: FontWeight.normal),
+            ),
+
+            const SizedBox(height: 10),
+
+            const Text(
+              'So now we replace it with values, for example: | 0 | 1 | 1 |',
+              style: TextStyle(fontSize: 15, fontWeight: FontWeight.normal),
+            ),
+
+
+            const SizedBox(height: 10),
+
+
+            const Text(
+              'Ignore all rows where the output is 0. Where the input is 0 for a column, since im on laptop, we can use the ! symbol for LOW values.',
+              style: TextStyle(fontSize: 15, fontWeight: FontWeight.normal),
+            ),
+
+            const SizedBox(height: 10),
+
+            const Text(
+              'So for the example above, we would write it as: !A * B --> !AB because A was LOW but B was true. Then we do the same thing for the other rows',
+              style: TextStyle(fontSize: 15, fontWeight: FontWeight.normal),
+            ),
+
+            const SizedBox(height: 10),
+
+            const Text(
+              'where the output is 1 and add all the expressions together with a + sign. This is the SUM of the PRODUCTS.',
+              style: TextStyle(fontSize: 15, fontWeight: FontWeight.normal),
+            ),
+
+            const SizedBox(height: 10),
+
+            const Text(
+              'Since I only had one row for the example our circuit (!AB), would just be NOT A AND B.',
+              style: TextStyle(fontSize: 15, fontWeight: FontWeight.normal),
+            ),
+
+            const SizedBox(height: 15),
+
+            const Text(
+              'You can design a circuit using a sum of products with the help of a truth table. This is especially useful for real world applications!',
+              style: TextStyle(fontSize: 15, fontWeight: FontWeight.normal),
+            ),
+
+          ],
+        ),
+      ),
+    );
+  }
+}
 
 
 class LogicGateScreen extends StatefulWidget {
